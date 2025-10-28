@@ -21,6 +21,9 @@ public class Cliente {
     @Column(length = 50, nullable = false)
     private String email;
 
+    @OneToOne
+    @JoinColumn(name = "Fk_DireccionEntrega")
+    private DireccionEntrega direccionEntrega;
     public Cliente() {
     }
 
