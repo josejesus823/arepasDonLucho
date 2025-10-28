@@ -3,11 +3,11 @@ package com.example.ArepasDonLucho.modelos;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Direccion de Entrega")
+@Table(name = "direcciones_entregas")
 public class DireccionEntrega {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(length = 50, nullable = false)
@@ -17,7 +17,7 @@ public class DireccionEntrega {
     @Column(length = 150, nullable = true)
     private String referencia;
 
-    @OneToOne (mappedBy= "DireccionEntrega")
+    @OneToOne (mappedBy= "direccionEntrega")
     private Cliente cliente;
 
     public DireccionEntrega() {

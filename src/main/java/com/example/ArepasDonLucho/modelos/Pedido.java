@@ -35,7 +35,7 @@ public class Pedido {
 
     //relacion 1:M
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "repartidor_id", referencedColumnName = "repartidor_id")
+    @JoinColumn(name = "repartidor_id ", referencedColumnName = "repartidor_id")
     private Repartidor repartidor;
 
     //CONSTRUCTOR

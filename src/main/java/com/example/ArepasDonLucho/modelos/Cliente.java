@@ -8,7 +8,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idCliente;
+    private Integer id;
 
     @Column(length = 50, nullable = false)
     private String nombreCliente;
@@ -22,13 +22,13 @@ public class Cliente {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "Fk_DireccionEntrega")
+    @JoinColumn(name = "direcciones_entregas", referencedColumnName = "id")
     private DireccionEntrega direccionEntrega;
     public Cliente() {
     }
 
-    public Cliente(String idCliente, String nombreCliente, String tipoDocumento, String numeroDocumneto, String telefono, String email) {
-        this.idCliente = idCliente;
+    public Cliente(Integer id, String nombreCliente, String tipoDocumento, String numeroDocumneto, String telefono, String email) {
+        this.id = id;
         this.nombreCliente = nombreCliente;
         this.tipoDocumento = tipoDocumento;
         this.numeroDocumneto = numeroDocumneto;
@@ -36,12 +36,12 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getIdCliente() {
-        return idCliente;
+    public Integer getIdCliente() {
+        return id;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCliente(Integer id) {
+        this.id = id;
     }
 
     public String getNombreCliente() {
