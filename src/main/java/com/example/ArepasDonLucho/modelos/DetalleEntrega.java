@@ -29,7 +29,7 @@ public class DetalleEntrega {
 
     // Relaciones
         //Uno a Uno
-    @OneToOne(mappedBy = "DetalleEntrega")
+    @OneToOne(mappedBy = "detalleEntrega")
     private Pedido pedido;
 
     // Constructores
