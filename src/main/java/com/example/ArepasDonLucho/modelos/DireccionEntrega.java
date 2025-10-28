@@ -17,6 +17,9 @@ public class DireccionEntrega {
     @Column(length = 150, nullable = true)
     private String referencia;
 
+    @OneToOne (mappedBy= "DireccionEntrega")
+    private Cliente cliente;
+
     public DireccionEntrega() {
     }
 
